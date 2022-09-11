@@ -5,14 +5,37 @@
 {% block contenido  %}
 
 
-<div class="card">
-    <div class="card-header">
-      Realizar Publicacion
-     
-    </div>
-    <div class="card-body">
-      <a name="" id="" class="btn btn-success" href=" {% url 'formulario' %}" role="button">Crear nuevo Post</a>
 
- 
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    
+    {% load static %}
+    <img src="{% static 'imagenes/sonrisa.jpg' %}">  
+    <link rel="stylesheet" type= "text/css" href=" {% static 'index.css' %}">
+    <div class="container">  
+    
+      <h1 class="display-3"> Ayudalos, publica y cambia su vida!! </h1>
+      <p class="lead">Empezemos a ayudar !! </p>
+      <hr class="my-2">
+      <a name="" id="newpost" class="btn btn-success" href=" {% url 'formulario' %}" role="button">Crear nuevo Post</a> 
+    </div>
+
+    <script src="" async defer></script>
+  </body>
+ </html>
+
+
+
+
+
 
  {% endblock%}

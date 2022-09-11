@@ -46,5 +46,28 @@ def formulario(request):
 def index(request):
     return render(request, 'contenido/index.html')
 
+def eliminar(request, id):
+    adopcion = Adopciones.objects.get(id=id)
+    adopcion.delete()
+    return redirect('galeria')
 
+
+
+def provisorio(request,id):
+    adopcion = Adopciones.objects.get(id=id)
+    formulario = AdopcionesForm(request.POST or None, request.FILES or None, instance=adopcion)
+    if formulario.is_valid() and request.POST:   #para editar post
+        formulario.save()                        #para editar post
+        return redirect('index')               #para editar post
+    return render(request,'contenido/provisorio.html', {'formulario': formulario})
+
+
+
+def adoptar(request,id):
+    adopcion=Adopciones.objects.get(id=id)
+    formulario = AdopcionesForm(request.POST or None, request.FILES or None, instance=adopcion)
+    if formulario.is_valid() and request.POST:   #para editar post
+        formulario.save()                        #para editar post
+        return redirect('index')               #para editar post
+    return render(request, 'contenido/adoptar.html', {'formulario':formulario})
 

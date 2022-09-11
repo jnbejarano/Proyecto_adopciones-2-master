@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div>  
+
+    
+        {% csrf_token %}
+        {% for campo in formulario%}
+        {% if campo.field.widget.input_type == 'file' and campo.value%}
+        
+        {% load static %}
+        <link rel="stylesheet" type= "text/css" href=" {% static 'provisorio.css' %}">
+
+        <h1>Gracias por darle provisorio !!!!</h1>  
+        
+        <div style="text-align: center;">
+            <img src="{{ MEDIA_URL}}/imagenes/{{ campo.value}}" width="400" text-a="" srcset="">
+        </div>
+
+
+        <div style="text-align: center;">
+            <input name="" id="" class="btn btn-success" type="submit" value="Enviar Informacion">
+            <input name="" id="" class="btn btn-success" type="submit" href=" {% url 'index' %}" value="Cancelar">
+        </div>
+        
+        {% endif %} 
+            
+        {% endfor %}
+<div>       
+
+
+
+{% endblock %}
