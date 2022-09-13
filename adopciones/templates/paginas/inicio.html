@@ -4,18 +4,22 @@
 
 
 {% block contenido %} 
+{% load static %}
 
-<div class="p-5 bg-light">
-    <div class="container">
-        <h1 class="display-3">Bienvenido a Adopciones Salta  </h1>
-        <p class="lead">Empezar a ayudar !! </p>
-        <hr class="my-2">
+<img src="{% static 'imagenes/portada.jpg' %}">  
+<div class="p-5">
+    <div class="container">  
         
+        <link rel="stylesheet" type= "text/css" href=" {% static 'portada.css' %}">
+        <h1 class="display-3">Bienvenido a Adopciones Salta  </h1>
+        <p class="lead">Empezemos a ayudar !! </p>
+        <hr class="my-2">
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="{% url 'galeria' %}" role="button">Empezar</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'galeria' %}" role="button">Empecemos!!</a>
         </p>
     </div>
 </div>
+
 
 {% endblock %}
 

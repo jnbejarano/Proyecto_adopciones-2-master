@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+
+.p{
+    transition-duration: 0.4s;
+  }
+  
+.p:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
